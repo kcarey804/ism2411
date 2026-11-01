@@ -1,0 +1,71 @@
+# 1. I identified the first bug, the total = sale assignment error, by explain the code out loud. Tracing the loop line-by-line revealed that total was being 
+# overwritten in every iteration instead of accumluating. This experience shows that reading code aloud is often faster than waiting for a traceback, proving that 
+# manual variable tracing is a powerful skill for catching errors that automated tools might miss. 
+
+# 2. The apply_discouunt(price, tier) function takes the original price of an item and the customer's discount tier as inputs. It uses the discount tier to determine 
+# how much of a discount to apply and returns the final price after the discount. A colleague could use this function without reading the code as long as the 
+#documentation explains which discount tiers are accepted and the discount rate for each tier. 
+
+# 3. No AI used
+
+#Exercise 1
+def calculate_tax(price, rate): return price * rate
+print(calculate_tax(100, 0.07))
+print(calculate_tax(250, 0.08))
+
+#Exercise 2
+def apply_discount(price, tier):
+    if tier == "gold": 
+        return price * 0.85
+    elif tier == "silver": 
+        return price * 0.90
+    elif tier == "bronze": 
+        return price * 0.95
+    else: 
+        return price price = 200
+print(f"gold: ${apply_discount(price, 'gold'):.2f}")
+print(f"silver: ${apply_discount(price, 'silver'):.2f}")
+print(f"bronze: ${apply_discount(price, 'bronze'):.2f}")
+print(f"non: ${apply_discount(price, 'none'):.2f}")
+
+#Exercise 3
+price = 200
+discounted_price_apply = apply_discount(price, "gold")
+total = discounted_price + calculate_tax(discounted_price, 0.07)
+print(f"After gold discount: ${discounted_price:.2f}")
+print(f"After tax: ${total:.2f}")
+print(f"final_price(200, 'gold', 0.07) = ${final_price(200, 'gold', 0.07):.2f}")
+
+#Exercise 4
+orders = [(200, "gold"), (150, "silver"), (80, "bronze"), (500, "none")] for price tier in orders:
+    total = final_price(price, tier, 0.07)
+print(f"Price: ${price}| Tier: {tier} | Final: ${total:.2f}")
+
+#Exercise 5
+sales = [120, 80, 250, 175, 90]
+
+total = 0
+for sale in sales:
+    total += sale
+print(f"Total: ${total}")
+
+count = 0
+for sale in sales
+    count += 1
+print(f"Count: {count}")
+
+i = 0
+while i < len(sales):
+    print(sales[i])
+    i += 1
+
+#Exercise 6
+x = 100
+def double_it():
+    x = 199
+    return x * 2
+print(x)
+print(double_it())
+print (x)
+# The global x remains 100 because the x inside the function is a separate local variable. 
+# Scope defines where a variable can be accessed. Local variables inside fucntions are hidden from the global scope. 
